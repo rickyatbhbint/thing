@@ -1,37 +1,29 @@
-// Define your list of filenames present in the /gifs/ root directory folder
 const gifList = [
-    "gif1.gif",
-    "gif2.gif",
-    "gif3.gif",
-    "gif4.gif",
-    "gif5.gif"
+    "cooltext515666701093763.gif",
+    "cooltext515670797968968.gif",
+    "cooltext515670818459612.gif",
+    "cooltext515670830421931.gif",
+    "cooltext515670847586193.gif",
+    "cooltext515670863716158.gif",
+    "cooltext515670883761544.gif"
 ];
 
 const mainGif = document.getElementById("main-gif");
 const gifContainer = document.getElementById("gif-container");
 const particleContainer = document.getElementById("particle-container");
 
-// Physics settings
 const gravity = 0.6;
-const friction = 0.98; // Air resistance
-const bounce = -0.7;   // Floor bounce elasticity
+const friction = 0.98; 
+const bounce = -0.7;
 let particles = [];
 
-// Helper function to pick a random item from our list
 function getRandomGif() {
     const randomIndex = Math.floor(Math.random() * gifList.length);
     return `gifs/${gifList[randomIndex]}`;
 }
-
-// Set up the first random gif on initial page load
 mainGif.src = getRandomGif();
-
-// Handle the interaction click
 gifContainer.addEventListener("click", (e) => {
-    // 1. Instantly swap the main image background
     mainGif.src = getRandomGif();
-
-    // 2. Explode the other options out from the cursor position (or center screen)
     const startX = e.clientX;
     const startY = e.clientY;
 
